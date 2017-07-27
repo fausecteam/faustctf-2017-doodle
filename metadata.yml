@@ -1,0 +1,17 @@
+name: doodle
+author:
+  - Christoph Egger <egger@cs.fau.de>
+packages:
+  - gnu-smalltalk
+  - gnu-smalltalk-common
+  - make
+  - nettle-dev
+  - nginx-full
+  - wget
+checker:
+  module: helloworld
+  class: HelloworldChecker
+  packages:
+    - python3-requests
+    - python3-defusedxml
+    - fortunes

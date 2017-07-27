@@ -1,0 +1,17 @@
+[Unit]
+Description=FAUST CTF doodle service
+
+[Service]
+Type=forking
+ExecStartPre=/srv/doodle/keygen
+ExecStart=/usr/bin/gst-remote -I seaside.im --daemon --start=Seaside 127.0.0.1
+WorkingDirectory=/srv/doodle/
+User=doodle
+CPUAccounting=yes
+CPUQuota=10%
+MemoryAccounting=yes
+MemoryLimit=100M
+LimitNPROC=100
+
+[Install]
+WantedBy=multi-user.target

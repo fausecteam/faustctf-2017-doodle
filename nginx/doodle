@@ -1,0 +1,14 @@
+server {
+	listen 80 default;
+	listen [::]:80 default;
+	server_name doodle.*;
+
+	root /srv/doodle/wwwroot/;
+
+	rewrite ^/$ /seaside/doodle/ redirect;
+
+	location /seaside/ {
+		proxy_pass http://127.0.0.1:8080/seaside/;
+		proxy_set_header Host $host;
+	}
+}
